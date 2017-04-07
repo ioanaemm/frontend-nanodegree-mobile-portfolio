@@ -32,7 +32,7 @@ Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
 
 #### Part 2: Optimize Frames per Second in pizza.html
 
-To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js. 
+To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js.
 
 You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
 
@@ -53,3 +53,57 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 
 * <a href="http://getbootstrap.com/css/">Bootstrap's CSS Classes</a>
 * <a href="http://getbootstrap.com/components/">Bootstrap's Components</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. Optimizations  for index.html :  
+2. Score for mobile: 90/100 and for desktop: 93/100;
+	a. I have changed the src of the img tag from a CDN to the local files and optimized the images;
+	b. I’ve added the media tag for “print.css”;
+	c. I’ve inlined the css from “style.css”;
+	d. I have added async attribute for “analytics.js” and “perfmatters.js “;
+	e. I have minified the html using Gulp
+	f. I’ve got rid off the Google fonts
+
+
+2. Optimizations for pizza.html:
+
+- I have inlined the css from “style.css”;
+- Using Gulp  I’ve added tasks for compressing and resizing images, minifying html, css and js.
+-
+
+ 3. Optimizations for main.js:
+
+- I've taken the var scrollMultiplication outside the loop because it didn't change from one iteration of the loop to another
+- I have decreased the number of pizzas because they were affecting the website’s performance and not all of them were necesarry;
+- I have added a fixed number of pizzas on the screen, regardless of screen width
+- I’ve added a percentage for the slider’s width
+
+
+Steps to see this project:
+1. Clone the repository on your local machine;
+2. In the terminal change the path to it and then type
+```bash
+$> python -m SimpleHTTPServer 8080
+```
+3. Open the browser and visit localhost: 8080;
+4. In order to see its score on PageSpeed Insights, you first need to download and install ngrok
+5. After that you need to point the terminal to that folder and then type “$ ./ngrok http 8080”
+6. Copy the URL ngrok gives you and paste it on PageSpeed Insight
+
+For the other part of this project meaning:  pizza.html
+	- to access the page, just click on Cam’s Pizzeria link
+	- open up Chrome Dev Tools -> Timeline. Press the record button (located on the top left of the page) scroll the page and then stop the record, in order to see the framerate.
