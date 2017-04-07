@@ -1,9 +1,11 @@
 ## Steps to see this project:
-1. Clone the repository on your local machine;
+1. Clone the repository on your local machine
 1. In the terminal change the path to it and then type
+
 ```bash
 $ python -m SimpleHTTPServer 8080
 ```
+
 1. Open the browser and visit localhost: 8080;
 1. In order to see its score on PageSpeed Insights, you first need to download and install ngrok
 1. After that you need to point the terminal to that folder and then type “$ ./ngrok http 8080”
@@ -16,11 +18,11 @@ $ python -m SimpleHTTPServer 8080
 --------------
 
 ### Optimizations  for index.html :  
-* Score for mobile: 90/100 and for desktop: 93/100;
-	- Changed the src of the img tag from a CDN to the local files and optimized the images;
-	- Added the media tag for “print.css”;
-	- Inlined the css from “style.css”;
-	- Added async attribute for “analytics.js” and “perfmatters.js “;
+* Score for mobile: 90/100 and for desktop: 93/100
+	- Changed the src of the img tag from a CDN to the local files and optimized the images
+	- Added the media tag for “print.css”
+	- Inlined the css from “style.css”
+	- Added async attribute for “analytics.js” and “perfmatters.js “
 	- Minified the HTML using Gulp
 	- Got rid off the Google fonts
 
@@ -28,7 +30,7 @@ $ python -m SimpleHTTPServer 8080
 
 ### Optimizations for pizza.html:
 
-  - I have inlined the css from “style.css”;
+  - Inlined the css from “style.css”
   - Using Gulp  I’ve added tasks for compressing and resizing images, minifying HTML, CSS and JS.
 
 --------------
