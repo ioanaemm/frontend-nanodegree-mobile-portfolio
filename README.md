@@ -68,15 +68,16 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 
 
 
+---------------------
 
-1. Optimizations  for index.html :  
-2. Score for mobile: 90/100 and for desktop: 93/100;
-	a. I have changed the src of the img tag from a CDN to the local files and optimized the images;
-	b. I’ve added the media tag for “print.css”;
-	c. I’ve inlined the css from “style.css”;
-	d. I have added async attribute for “analytics.js” and “perfmatters.js “;
-	e. I have minified the html using Gulp
-	f. I’ve got rid off the Google fonts
+### Optimizations  for index.html :  
+* Score for mobile: 90/100 and for desktop: 93/100;
+	1. I have changed the src of the img tag from a CDN to the local files and optimized the images;
+	1. I’ve added the media tag for “print.css”;
+	1. I’ve inlined the css from “style.css”;
+	1. I have added async attribute for “analytics.js” and “perfmatters.js “;
+	1. I have minified the html using Gulp
+	1. I’ve got rid off the Google fonts
 
 
 2. Optimizations for pizza.html:
@@ -97,7 +98,7 @@ Steps to see this project:
 1. Clone the repository on your local machine;
 2. In the terminal change the path to it and then type
 ```bash
-$> python -m SimpleHTTPServer 8080
+$ python -m SimpleHTTPServer 8080
 ```
 3. Open the browser and visit localhost: 8080;
 4. In order to see its score on PageSpeed Insights, you first need to download and install ngrok
