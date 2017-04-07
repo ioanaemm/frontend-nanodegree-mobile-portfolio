@@ -6,7 +6,7 @@
 $ python -m SimpleHTTPServer 8080
 ```
 
-3. Open the browser and visit localhost: 8080;
+3. Open the browser and visit localhost: 8080
 4. In order to see its score on PageSpeed Insights, you first need to download and install ngrok
 5. After that you need to point the terminal to that folder and then type “$ ./ngrok http 8080”
 6. Copy the URL ngrok gives you and paste it on PageSpeed Insight
@@ -18,13 +18,13 @@ $ python -m SimpleHTTPServer 8080
 --------------
 
 ### Optimizations  for index.html :  
-  - Score for mobile: 90/100 and for desktop: 93/100
-	- Changed the src of the img tag from a CDN to the local files and optimized the images
-	- Added the media tag for “print.css”
-	- Inlined the css from “style.css”
-	- Added async attribute for “analytics.js” and “perfmatters.js “
-	- Minified the HTML using Gulp
-	- Got rid off the Google fonts
+- Score for mobile: 90/100 and for desktop: 93/100
+- Changed the src of the img tag from a CDN to the local files and optimized the images
+- Added the media tag for “print.css”
+- Inlined the css from “style.css”
+- Added async attribute for “analytics.js” and “perfmatters.js “
+- Minified the HTML using Gulp
+- Got rid off the Google fonts
 
 --------------
 
