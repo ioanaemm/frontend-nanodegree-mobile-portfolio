@@ -49,12 +49,12 @@ gulp.task('compress_scripts', function() {
 
 gulp.task('build', function(callback) {
   runSequence(
-    ['compress_view_templates', 'compress_main_template', 'compress_scripts', 'images', 'compress_css'],
+    ['compress_view_templates', 'compress_main_template', 'compress_scripts', 'images_big', 'images_small', 'compress_css'],
     callback
   );
 });
 
-gulp.task('images', function () {
+gulp.task('images_big', function () {
   gulp
     .src('img_src/**.*')
     .pipe(imageResize({
@@ -76,4 +76,28 @@ gulp.task('images', function () {
       concurrent: 10
     }))
     .pipe(gulp.dest('./views/images'));
+});
+
+gulp.task('images_small', function () {
+  gulp
+    .src('img_src/**.*')
+    .pipe(imageResize({
+      width : 50,
+      height : 50,
+      crop : true,
+      quality: 0,
+      upscale : false,
+    }))
+    .pipe(image({
+      pngquant: true,
+      optipng: false,
+      zopflipng: false,
+      jpegRecompress: true,
+      jpegoptim: false,
+      mozjpeg: true,
+      gifsicle: false,
+      svgo: false,
+      concurrent: 10
+    }))
+    .pipe(gulp.dest('./views/images_small'));
 });
