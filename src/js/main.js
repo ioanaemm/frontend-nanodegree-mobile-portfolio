@@ -428,6 +428,7 @@ var resizePizzas = function(size) {
     // var oldSize = oldWidth / windowWidth;
 
     // Changes the slider value to a percent width
+    var newWidth;
     function changePizzaSizes (size) {
       switch(size) {
         case "1":
@@ -438,6 +439,7 @@ var resizePizzas = function(size) {
           break;
         case "3":
           newWidth = 50;
+          break;
         default:
           console.log("bug in sizeSwitcher");
       }
@@ -512,7 +514,7 @@ function updatePositions() {
   var items = document.querySelectorAll('.mover');
   //var arrLefts = [];
   var scrollMultiplication = document.body.scrollTop / 1250;
-  console.log(scrollMultiplication);
+  //console.log(scrollMultiplication);
   //for(var i = 0; i < items.length; i++) {
   //  arrLefts.push(items[i].basicLeft);
   //}

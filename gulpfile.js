@@ -1,28 +1,11 @@
 const gulp = require('gulp');
-const imagemin = require('gulp-imagemin');
-const imageResize = require('gulp-image-resize');
 const minify = require('gulp-minify');
 const uglify = require('gulp-uglify');
 const babel = require('gulp-babel');
 const htmlmin = require('gulp-htmlmin');
 const runSequence = require('run-sequence');
-
-gulp.task('images', function(cb) {
-  return gulp.src('img_src/**/*.*')
-  .pipe(imageResize({
-    width : 400,
-    height : 400,
-    crop : true,
-    quality: 0,
-    upscale : false,
-  }))
-  .pipe(imagemin([
-    imagemin.gifsicle({interlaced: true}),
-    imagemin.jpegtran({progressive: true}),
-    imagemin.optipng({optimizationLevel: 7}),
-  ]))
-  .pipe(gulp.dest('views/images'));
-});
+const image = require('gulp-image');
+const imageResize = require('gulp-image-resize');
 
 gulp.task('compress_view_templates', function() {
   gulp
@@ -44,19 +27,53 @@ gulp.task('compress_main_template', function() {
     .pipe(gulp.dest('.'))
 });
 
+gulp.task('compress_css', function() {
+  gulp
+    .src('src/views/css/*.css')
+    .pipe(htmlmin({
+      collapseWhitespace: true,
+      minifyCSS: true
+    }))
+    .pipe(gulp.dest('views/css'))
+});
+
 gulp.task('compress_scripts', function() {
   gulp
     .src('src/js/**/*.js')
     .pipe(babel({
         presets: ['es2015']
     }))
-    .pipe(uglify())
+    //.pipe(uglify())
     .pipe(gulp.dest('./views/js'))
 });
 
 gulp.task('build', function(callback) {
   runSequence(
-    ['compress_view_templates', 'compress_main_template', 'compress_scripts', 'images'],
+    ['compress_view_templates', 'compress_main_template', 'compress_scripts', 'images', 'compress_css'],
     callback
   );
+});
+
+gulp.task('images', function () {
+  gulp
+    .src('img_src/**.*')
+    .pipe(imageResize({
+      width : 400,
+      height : 400,
+      crop : true,
+      quality: 0,
+      upscale : false,
+    }))
+    .pipe(image({
+      pngquant: true,
+      optipng: false,
+      zopflipng: false,
+      jpegRecompress: true,
+      jpegoptim: false,
+      mozjpeg: true,
+      gifsicle: false,
+      svgo: false,
+      concurrent: 10
+    }))
+    .pipe(gulp.dest('./views/images'));
 });
