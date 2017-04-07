@@ -1,6 +1,6 @@
 ## Steps to see this project:
 1. Clone the repository on your local machine;
-1. In the terminal change the path to it and then type
+   In the terminal change the path to it and then type
 ```bash
 $ python -m SimpleHTTPServer 8080
 ```
@@ -16,13 +16,13 @@ $ python -m SimpleHTTPServer 8080
 --------------
 
 ### Optimizations  for index.html :  
-* Score for mobile: 90/100 and for desktop: 93/100;
-	1. I have changed the src of the img tag from a CDN to the local files and optimized the images;
-	1. I’ve added the media tag for “print.css”;
-	1. I’ve inlined the css from “style.css”;
-	1. I have added async attribute for “analytics.js” and “perfmatters.js “;
-	1. I have minified the html using Gulp
-	1. I’ve got rid off the Google fonts
+- Score for mobile: 90/100 and for desktop: 93/100;
+	* I have changed the src of the img tag from a CDN to the local files and optimized the images;
+	* I’ve added the media tag for “print.css”;
+	* I’ve inlined the css from “style.css”;
+	* I have added async attribute for “analytics.js” and “perfmatters.js “;
+	* I have minified the html using Gulp
+	* I’ve got rid off the Google fonts
 
 
 2. Optimizations for pizza.html:
