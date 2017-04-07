@@ -17,23 +17,25 @@ $ python -m SimpleHTTPServer 8080
 
 ### Optimizations  for index.html :  
 * Score for mobile: 90/100 and for desktop: 93/100;
-	- I have changed the src of the img tag from a CDN to the local files and optimized the images;
-	- I’ve added the media tag for “print.css”;
-	- I’ve inlined the css from “style.css”;
-	- I have added async attribute for “analytics.js” and “perfmatters.js “;
-	- I have minified the html using Gulp
-	- I’ve got rid off the Google fonts
+	- Changed the src of the img tag from a CDN to the local files and optimized the images;
+	- Added the media tag for “print.css”;
+	- Inlined the css from “style.css”;
+	- Added async attribute for “analytics.js” and “perfmatters.js “;
+	- Minified the HTML using Gulp
+	- Got rid off the Google fonts
 
+--------------
 
-2. Optimizations for pizza.html:
+### Optimizations for pizza.html:
 
-- I have inlined the css from “style.css”;
-- Using Gulp  I’ve added tasks for compressing and resizing images, minifying html, css and js.
--
+  - I have inlined the css from “style.css”;
+  - Using Gulp  I’ve added tasks for compressing and resizing images, minifying HTML, CSS and JS.
 
- 3. Optimizations for main.js:
+--------------
 
-- I've taken the var scrollMultiplication outside the loop because it didn't change from one iteration of the loop to another
-- I have decreased the number of pizzas because they were affecting the website’s performance and not all of them were necesarry;
-- I have added a fixed number of pizzas on the screen, regardless of screen width
-- I’ve added a percentage for the slider’s width
+### Optimizations for main.js:
+
+- Taken the var scrollMultiplication outside the loop because it didn't change from one iteration of the loop to another
+- Decreased the number of pizzas because they were affecting the website’s performance and not all of them were necesarry;
+- Added a fixed number of pizzas on the screen, regardless of screen width
+- Added a percentage for the slider’s width
