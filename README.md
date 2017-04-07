@@ -1,5 +1,4 @@
-
-###Steps to see this project:
+## Steps to see this project:
 1. Clone the repository on your local machine;
 1. In the terminal change the path to it and then type
 ```bash
