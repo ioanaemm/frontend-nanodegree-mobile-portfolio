@@ -17,7 +17,7 @@ $ python -m SimpleHTTPServer 8080
 
 ### Optimizations  for index.html :  
 - Score for mobile: 90/100 and for desktop: 93/100;
-	* I have changed the src of the img tag from a CDN to the local files and optimized the images;
+	# I have changed the src of the img tag from a CDN to the local files and optimized the images;
 	* I’ve added the media tag for “print.css”;
 	* I’ve inlined the css from “style.css”;
 	* I have added async attribute for “analytics.js” and “perfmatters.js “;
